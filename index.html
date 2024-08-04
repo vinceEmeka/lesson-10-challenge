@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .amazon-btn {
+        background-color: yellow;
+        padding: 10px 25px;
+        border-radius: 15px;
+      }
+      .schedule-btn {
+        cursor: pointer;
+        padding: 12px;
+        background-color: rgb(27, 34, 36);
+        color: white;
+        font-size: 20px;
+        margin-top: 12px;
+        border-radius: 12px;
+        border: none;
+        transition: background-color 0.15s;
+      }
+      .schedule-btn:hover {
+        background-color: rgb(155, 155, 155);
+      }
+      .is-toggled {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="amazon-btn">Add to cart</button>
+    <button class="request-btn">Request Now</button> <br />
+    <button class="schedule-btn" onclick="toggleBtn()">
+      Schedule for Later
+    </button>
+
+    <script>
+      function toggleBtn() {
+        const buElem = document.querySelector(".schedule-btn");
+        if (buElem.classList.contains("is-toggled")) {
+          buElem.classList.remove("is-toggled");
+        } else {
+          buElem.classList.add("is-toggled");
+        }
+      }
+
+      const check = document
+        .querySelector(".amazon-btn")
+        .classList.contains("amazon-btn");
+
+      console.log(check);
+    </script>
+  </body>
+</html>
